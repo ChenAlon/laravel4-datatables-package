@@ -487,7 +487,7 @@ class Datatables
         // if its a normal query ( no union ) replace the slect with static text to improve performance
         $myQuery = clone $query;
         if( !preg_match( '/UNION/i', $myQuery->toSql() ) ){
-        	$myQuery->select( DB::Raw("'1' as row") );	        	
+        	$myQuery->select( DB::Raw("'1' as 'row'") );	        	
         }
 
 
